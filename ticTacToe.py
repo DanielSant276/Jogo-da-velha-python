@@ -12,12 +12,6 @@ def ticTacToeFormation():
         print(ticTacToe[1][0], ticTacToe[1][1], ticTacToe[1][2])
         print(ticTacToe[2][0], ticTacToe[2][1], ticTacToe[2][2])
 
-def question():
-    global finish
-    quest = input('desistir? ')
-    if quest == 's' or quest == 'sim':
-        finish = True
-
 def play():
     global finish, draw
 
@@ -25,13 +19,7 @@ def play():
     oTurn = False
 
     while not finish:
-        while xTurn:
-            question()
-            if finish:
-                winner = 'o'
-                print('O jogador x desistiu.', end=' ')
-                break
-            
+        while xTurn:            
             valid = False
             while not valid:
                 player1Row = int(input('Jogador 1, escolhar uma linha: ')) - 1
@@ -58,12 +46,6 @@ def play():
 
         if not finish:
             while oTurn:
-                question()
-                if finish:
-                    winner = 'x'
-                    print('O jogador o desistiu.', end=' ')
-                    break
-
                 valid = False
                 while not valid:
                     player2Row = int(input('Jogador 2, escolhar uma linha: ')) - 1
